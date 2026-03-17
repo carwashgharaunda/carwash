@@ -357,21 +357,16 @@ return;
 }
 
 if(phone.length < 10){
-alert("Please enter valid phone number");
+alert("Please enter a valid phone number.");
 return;
 }
 
-let isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-
-let upi="upi://pay?pa=8168556372-h588@axl&pn=Car%20Wash%20Gharaunda&am="+selectedPrice+"&cu=INR";
-
-if(isMobile){
-window.location.href=upi;
-}else{
+// ALWAYS show QR (no mobile detection)
 document.getElementById("qrSection").style.display="block";
-document.getElementById("qrSection").scrollIntoView({behavior:"smooth"});
-alert("Scan QR to pay");
-}
+
+document.getElementById("qrSection").scrollIntoView({
+behavior:"smooth"
+});
 
 }
 
@@ -471,7 +466,7 @@ Book your wash in less than 30 seconds
 
 <div class="how-card">
 <h3>3️⃣ Pay Securely</h3>
-<p>Pay online or scan QR code</p>
+<p>Pay via scanning QR code</p>
 </div>
 
 <div class="how-card">
@@ -690,7 +685,14 @@ border-radius:12px;
 
 <h3>Scan QR to Pay</h3>
 
-<p>Please scan using Google Pay / PhonePe / Paytm</p>
+<p style="font-size:14px;color:#555;">
+📱 Open any UPI app (GPay / PhonePe / Paytm)<br>
+👉 Tap “Scan QR” and complete payment
+</p>
+
+<p style="font-size:13px;color:#888;margin-top:8px;">
+✔ Safe & Secure Payment
+</p>
 
 <img src="upi-qr.png" style="width:220px;border-radius:10px;">
 
