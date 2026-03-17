@@ -69,8 +69,8 @@ max-width:520px;
 
 .logo{
 width:200px;
-border-radius:16px;
 box-shadow:0 10px 30px rgba(0,0,0,0.3);
+border-radius:16px;
 }
 
 .hero h1{
@@ -302,6 +302,29 @@ width:100%;
 cursor:pointer;
 }
 
+.old-price{
+text-decoration:line-through;
+color:#999;
+font-size:16px;
+margin-right:8px;
+}
+
+.new-price{
+color:#25D366;
+font-size:24px;
+font-weight:bold;
+}
+
+.offer-tag{
+background:#25D366;
+color:white;
+display:inline-block;
+padding:4px 8px;
+border-radius:6px;
+font-size:12px;
+margin-top:6px;
+}
+
 footer{
 text-align:center;
 padding:30px;
@@ -494,7 +517,12 @@ onclick="document.getElementById('booking').scrollIntoView({behavior:'smooth'})"
 <span>✔ Secure UPI Payment</span>
 <span>🚗 100+ Cars Cleaned</span>
 </div>
-📸 Follow us on Instagram: @car_wash_gharaunda
+
+<div class="hero-trust">
+<span>📸 Follow us on Instagram: @car_wash_gharaunda</span>
+</div>
+
+
 </div>
 
 </div>
@@ -538,8 +566,13 @@ Book your wash in less than 30 seconds
 <div class="grid">
 
 <div class="card">
-<h3>🚗 Basic Foam Wash</h3>
-<div class="price">₹249</div>
+<h3>Basic Foam Wash <span class="badge">Launch Offer</span></h3>
+<div class="price">
+<span class="old-price">₹299</span>
+<span class="new-price">₹249</span>
+</div>
+
+<div class="offer-tag">Limited Time ₹50 OFF</div>
 <ul>
 <li>🫧 Foam exterior wash</li>
 <li>💨 Pressure rinse</li>
@@ -549,8 +582,13 @@ Book your wash in less than 30 seconds
 </div>
 
 <div class="card popular">
-<h3>🚗 Premium Wash <span class="badge">Most Popular</span></h3>
-<div class="price">₹349</div>
+<h3>🚗 Premium Wash <span class="badge">Best Value</span></h3>
+<div class="price">
+<span class="old-price">₹399</span>
+<span class="new-price">₹349</span>
+</div>
+
+<div class="offer-tag">Limited Time ₹50 OFF</div>
 <ul>
 <li>🫧 Foam exterior wash</li>
 <li>💨 Pressure rinse</li>
