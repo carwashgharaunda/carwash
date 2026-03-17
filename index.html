@@ -1,8 +1,9 @@
-
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Car Wash in Gharaunda | Doorstep Car & Bike Cleaning Service</title>
 <meta name="description" content="Doorstep car and bike washing service in Gharaunda. Book professional foam wash starting ₹149. Available in nearby villages.">
 
@@ -15,7 +16,9 @@ background:#f5f7fb;
 color:#333;
 }
 
+/* HERO FIXED */
 .hero{
+width:100%;
 background: linear-gradient(135deg,#0a2540,#163b63);
 color:white;
 text-align:center;
@@ -47,56 +50,16 @@ font-size:36px;
 margin-bottom:10px;
 }
 
-@media(max-width:700px){
-
-.hero-row{
-display:flex;
-align-items:center;
-justify-content:center;
-gap:50px;
-max-width:900px;
-margin:auto;
-flex-wrap:wrap;
-}
-
-.hero-text{
-flex:1;
-text-align:left;
-max-width:520px;
-}
-
-}
-
 .logo{
 width:200px;
 box-shadow:0 10px 30px rgba(0,0,0,0.3);
 border-radius:16px;
 }
 
-.hero h1{
-font-size:40px;
-letter-spacing:1px;
-}
-
 .tagline{
 font-size:18px;
 opacity:0.9;
 margin-bottom:20px;
-}
-
-.hero-features{
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-gap:15px;
-margin-bottom:25px;
-font-size:15px;
-}
-
-.hero-features span{
-background:rgba(255,255,255,0.1);
-padding:8px 12px;
-border-radius:20px;
 }
 
 .hero-btn{
@@ -107,34 +70,29 @@ padding:14px 26px;
 border-radius:30px;
 font-size:16px;
 cursor:pointer;
-box-shadow:0 4px 12px rgba(0,0,0,0.2);
 }
 
-.hero-btn:hover{
-background:#1ebe5d;
+.hero-trust{
+margin-top:20px;
+display:flex;
+gap:12px;
+flex-wrap:wrap;
+justify-content:center;
 }
 
-header{
-background:#0a2540;
-color:white;
-padding:40px 20px;
-text-align:center;
+.hero-trust span{
+background:rgba(255,255,255,0.15);
+padding:6px 12px;
+border-radius:20px;
 }
 
-header h1{
-margin:0;
-font-size:32px;
-}
-
-header p{
-margin-top:8px;
-opacity:0.9;
-}
-
+/* CONTAINER FIX */
 .container{
+width:100%;
 max-width:1000px;
 margin:auto;
-padding:20px;
+padding:16px;
+box-sizing:border-box;
 }
 
 .section-title{
@@ -142,6 +100,7 @@ text-align:center;
 margin-top:20px;
 }
 
+/* GRID */
 .grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
@@ -167,16 +126,10 @@ text-align:center;
 font-size:12px;
 }
 
-.how-card h3{
-margin:5px 0;
-font-size:16px;
-}
-
 .monthly-grid{
 display:grid;
 grid-template-columns:1fr 1fr;
 gap:16px;
-justify-content:center;
 max-width:600px;
 margin:auto;
 margin-top:20px;
@@ -209,97 +162,11 @@ font-size:12px;
 margin-left:6px;
 }
 
-.select-btn:hover{
-background:#163b63;
-}
-
-.pay-btn:hover{
-background:#1ebe5d;
-}
-.card h3{
-margin-top:0;
-}
-
 .price{
 font-size:22px;
 font-weight:bold;
 color:#0a2540;
 margin:8px 0;
-}
-
-ul{
-padding-left:18px;
-}
-
-.hero-trust{
-margin-top:20px;
-display:flex;
-gap:12px;
-flex-wrap:wrap;
-}
-
-.hero-trust span{
-background:rgba(255,255,255,0.15);
-padding:6px 12px;
-border-radius:20px;
-}
-.select-btn{
-background:#0a2540;
-color:white;
-border:none;
-padding:10px;
-border-radius:8px;
-width:100%;
-cursor:pointer;
-margin-top:10px;
-}
-
-.booking-box{
-background:white;
-padding:20px;
-border-radius:12px;
-box-shadow:0 4px 15px rgba(0,0,0,0.08);
-margin-top:30px;
-}
-
-input,select{
-width:100%;
-padding:10px;
-margin-top:6px;
-margin-bottom:12px;
-border-radius:8px;
-border:1px solid #ccc;
-}
-
-.price-box{
-background:#eef3ff;
-padding:14px;
-border-radius:10px;
-text-align:center;
-font-weight:bold;
-}
-
-.form-grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:12px;
-}
-
-@media(max-width:700px){
-.form-grid{
-grid-template-columns:1fr;
-}
-}
-
-.pay-btn{
-background:#25D366;
-border:none;
-padding:14px;
-border-radius:10px;
-color:white;
-font-size:16px;
-width:100%;
-cursor:pointer;
 }
 
 .old-price{
@@ -325,20 +192,58 @@ font-size:12px;
 margin-top:6px;
 }
 
-footer{
-text-align:center;
-padding:30px;
-color:#666;
+.select-btn{
+background:#0a2540;
+color:white;
+border:none;
+padding:10px;
+border-radius:8px;
+width:100%;
+cursor:pointer;
+margin-top:10px;
+}
+
+.booking-box{
+background:white;
+padding:20px;
+border-radius:12px;
 margin-top:30px;
 }
 
-@media(max-width:800px){
-.grid{
-grid-template-columns:1fr;
+input,select{
+width:100%;
+padding:10px;
+margin-bottom:12px;
+border-radius:8px;
+border:1px solid #ccc;
 }
-header h1{
-font-size:26px;
+
+.price-box{
+background:#eef3ff;
+padding:14px;
+border-radius:10px;
+text-align:center;
+font-weight:bold;
 }
+
+.form-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:12px;
+}
+
+.pay-btn{
+background:#25D366;
+border:none;
+padding:14px;
+border-radius:10px;
+color:white;
+font-size:16px;
+width:100%;
+cursor:pointer;
+}
+
+/* ✅ CLEAN MOBILE FIX */
 @media(max-width:700px){
 
 .hero-row{
@@ -346,12 +251,7 @@ flex-direction:column;
 text-align:center;
 }
 
-.hero-logo{
-order:1;
-}
-
 .hero-text{
-order:2;
 text-align:center;
 }
 
@@ -360,14 +260,36 @@ width:140px;
 }
 
 .hero-text h1{
-font-size:30px;
+font-size:28px;
 }
 
-.hero-trust{
-justify-content:center;
+.grid{
+grid-template-columns:1fr;
+}
+
+.monthly-grid{
+grid-template-columns:1fr;
+}
+
+.how-grid{
+grid-template-columns:1fr;
+}
+
+.form-grid{
+grid-template-columns:1fr;
+}
+
+.card{
+padding:14px;
 }
 
 }
+
+footer{
+text-align:center;
+padding:30px;
+color:#666;
+margin-top:30px;
 }
 
 </style>
@@ -378,22 +300,15 @@ let selectedPackage="";
 let selectedPrice=0;
 
 function choosePackage(name,price){
-
 selectedPackage=name;
 selectedPrice=price;
 
 document.getElementById("packageName").innerText=name;
 document.getElementById("amount").innerText="Amount to Pay: ₹"+price;
-document.getElementById("booking").style.border="2px solid #25D366";
-
-setTimeout(function(){
-document.getElementById("booking").style.border="none";
-},1500);	
 
 document.getElementById("booking").scrollIntoView({
-    behavior:"smooth"
+behavior:"smooth"
 });
-
 }
 
 function sendWhatsApp(){
@@ -413,11 +328,10 @@ let message =
 "Car: "+car+"%0A"+
 "Package: "+selectedPackage;
 
-let whatsappUrl="https://api.whatsapp.com/send?phone=918168556372&text="+message;
-
-window.open(whatsappUrl,"_blank");
+window.open("https://api.whatsapp.com/send?phone=918168556372&text="+message);
 
 }
+
 function payNow(){
 
 let name=document.getElementById("name").value;
@@ -437,47 +351,21 @@ return;
 }
 
 if(phone.length < 10){
-alert("Please enter a valid phone number.");
+alert("Please enter valid phone number");
 return;
 }
 
-let time=document.getElementById("time").value;
 let isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
 
-let upi="upi://pay?pa=8168556372-h588@axl&pn=Car%20Wash%20Gharaunda&mc=0000&tid="+Date.now()+"&tr="+Date.now()+"&tn=Car%20Wash%20Booking&am="+selectedPrice+"&cu=INR";
+let upi="upi://pay?pa=8168556372-h588@axl&pn=Car%20Wash%20Gharaunda&am="+selectedPrice+"&cu=INR";
 
 if(isMobile){
-
-    // Mobile → open UPI app
-    window.location.href=upi;
-
+window.location.href=upi;
 }else{
-
-    // PC → show QR code
-    document.getElementById("qrSection").style.display="block";
-	// Scroll smoothly to QR
-    document.getElementById("qrSection").scrollIntoView({
-        behavior:"smooth"
-    });
-    alert("Please scan the QR code using your mobile payment app to complete payment.");
-
+document.getElementById("qrSection").style.display="block";
+document.getElementById("qrSection").scrollIntoView({behavior:"smooth"});
+alert("Scan QR to pay");
 }
-
-let msg=`New Booking - Car Wash Gharaunda
-
-Name: ${name}
-Phone: ${phone}
-Area: ${area}
-Location: ${location}
-Car: ${car}
-Package: ${selectedPackage}
-Preferred Time: ${time}
-Amount Paid: ₹${selectedPrice}`;
-
-let phoneNumber="918168556372";
-
-let wa="https://wa.me/"+phoneNumber+"?text="+encodeURIComponent(msg);
-
 
 }
 
@@ -499,13 +387,9 @@ let wa="https://wa.me/"+phoneNumber+"?text="+encodeURIComponent(msg);
 
 <h1>Doorstep Car & Bike Wash</h1>
 
-<p class="tagline">
-Professional Foam Cleaning at Your Home
-</p>
+<p class="tagline">Professional Foam Cleaning at Your Home</p>
 
-<p style="font-size:18px;margin-top:8px;">
-<b>Starting from ₹149</b>
-</p>
+<p><b>Starting from ₹149</b></p>
 
 <button class="hero-btn"
 onclick="document.getElementById('booking').scrollIntoView({behavior:'smooth'})">
@@ -521,7 +405,6 @@ onclick="document.getElementById('booking').scrollIntoView({behavior:'smooth'})"
 <div class="hero-trust">
 <span>📸 Follow us on Instagram: @car_wash_gharaunda</span>
 </div>
-
 
 </div>
 
@@ -668,7 +551,6 @@ Book your wash in less than 30 seconds
 </div>
 	
 </div>
-
 <h2 class="section-title">Service Time</h2>
 
 <div class="card" style="text-align:center;">
@@ -802,15 +684,13 @@ You will receive booking confirmation on WhatsApp after payment
 
 </div>
 
+</div>
+
 <footer>
 📍 Serving Gharaunda & Nearby Villages  
 📞 WhatsApp Booking Available  
 🚗 Car Wash Gharaunda
 </footer>
-<a href="https://wa.me/918168556372"
-style="position:fixed;bottom:20px;right:20px;z-index:1000;">
-<img src="https://cdn-icons-png.flaticon.com/512/733/733585.png"
-width="60">
-</a>
+
 </body>
 </html>
