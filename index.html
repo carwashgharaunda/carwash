@@ -1,813 +1,819 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Car Wash in Gharaunda | Doorstep Car & Bike Cleaning Service</title>
-<meta name="description" content="Doorstep car and bike washing service in Gharaunda. Book professional foam wash starting ₹149. Available in nearby villages.">
-
-<style>
-
-*{
-box-sizing:border-box;
-}
-
-body{
-font-family: 'Segoe UI', Arial, sans-serif;
-margin:0;
-padding:0;
-overflow-x:hidden;
-background:#f5f7fb;
-color:#333;
-}
-
-/* HERO FIXED */
-.hero{
-width:100%;
-background: linear-gradient(135deg,#0a2540,#163b63);
-color:white;
-text-align:center;
-padding:60px 20px;
-}
-
-.hero-row{
-display:flex;
-align-items:center;
-justify-content:center;
-gap:40px;
-max-width:900px;
-margin:auto;
-flex-wrap:wrap;
-}
-
-.hero-logo{
-flex:1;
-text-align:center;
-}
-
-.hero-text{
-flex:2;
-text-align:left;
-}
-
-.hero-text h1{
-font-size:36px;
-margin-bottom:10px;
-}
-
-.logo{
-width:200px;
-box-shadow:0 10px 30px rgba(0,0,0,0.3);
-border-radius:16px;
-}
-
-.tagline{
-font-size:18px;
-opacity:0.9;
-margin-bottom:20px;
-}
-
-.hero-btn{
-background:#25D366;
-color:white;
-border:none;
-padding:14px 26px;
-border-radius:30px;
-font-size:16px;
-cursor:pointer;
-}
-
-.hero-trust{
-margin-top:20px;
-display:flex;
-gap:12px;
-flex-wrap:wrap;
-justify-content:center;
-}
-
-.hero-trust span{
-background:rgba(255,255,255,0.15);
-padding:6px 12px;
-border-radius:20px;
-}
-
-/* CONTAINER FIX */
-.container{
-width:100%;
-max-width:1000px;
-margin:auto;
-padding:16px;
-box-sizing:border-box;
-}
-
-.section-title{
-text-align:center;
-margin-top:20px;
-}
-
-/* GRID */
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:16px;
-margin-top:20px;
-}
-
-.how-grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:14px;
-max-width:700px;
-margin:auto;
-margin-top:10px;
-}
-
-.how-card{
-background:white;
-padding:14px;
-border-radius:10px;
-box-shadow:0 4px 10px rgba(0,0,0,0.08);
-text-align:center;
-font-size:12px;
-}
-
-.monthly-grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:16px;
-max-width:600px;
-margin:auto;
-margin-top:20px;
-}
-
-.card{
-background:white;
-padding:18px;
-border-radius:12px;
-box-shadow:0 4px 15px rgba(0,0,0,0.08);
-}
-
-.card:hover{
-transform:translateY(-4px);
-box-shadow:0 6px 20px rgba(0,0,0,0.12);
-transition:0.2s;
-}
-
-.popular{
-border:2px solid #25D366;
-transform:scale(1.03);
-}
-
-.badge{
-background:#25D366;
-color:white;
-padding:4px 8px;
-border-radius:6px;
-font-size:12px;
-margin-left:6px;
-}
-
-.price{
-font-size:22px;
-font-weight:bold;
-color:#0a2540;
-margin:8px 0;
-}
-
-.old-price{
-text-decoration:line-through;
-color:#999;
-font-size:16px;
-margin-right:8px;
-}
-
-.new-price{
-color:#25D366;
-font-size:24px;
-font-weight:bold;
-}
-
-.offer-tag{
-background:#25D366;
-color:white;
-display:inline-block;
-padding:4px 8px;
-border-radius:6px;
-font-size:12px;
-margin-top:6px;
-}
-
-.select-btn{
-background:#0a2540;
-color:white;
-border:none;
-padding:10px;
-border-radius:8px;
-width:100%;
-cursor:pointer;
-margin-top:10px;
-}
-
-.booking-box{
-background:white;
-padding:20px;
-border-radius:12px;
-margin-top:30px;
-}
-
-input,select{
-width:100%;
-padding:10px;
-margin-bottom:12px;
-border-radius:8px;
-border:1px solid #ccc;
-}
-
-.price-box{
-background:#eef3ff;
-padding:14px;
-border-radius:10px;
-text-align:center;
-font-weight:bold;
-}
-
-.form-grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:12px;
-}
-
-.pay-btn{
-background:#25D366;
-border:none;
-padding:14px;
-border-radius:10px;
-color:white;
-font-size:16px;
-width:100%;
-cursor:pointer;
-}
-
-/* ✅ CLEAN MOBILE FIX */
-@media(max-width:700px){
-
-.hero-row{
-flex-direction:column;
-text-align:center;
-}
-
-.hero-text{
-text-align:center;
-}
-
-.logo{
-width:140px;
-}
-
-.hero-text h1{
-font-size:28px;
-}
-
-.grid{
-grid-template-columns:1fr;
-}
-
-.monthly-grid{
-grid-template-columns:1fr;
-}
-
-.how-grid{
-grid-template-columns:1fr;
-}
-
-.form-grid{
-grid-template-columns:1fr;
-}
-
-.card{
-padding:14px;
-}
-
-}
-
-footer{
-text-align:center;
-padding:30px;
-color:#666;
-margin-top:30px;
-}
-
-</style>
-
-<script>
-
-let selectedPackage="";
-let selectedPrice=0;
-
-function choosePackage(name,price){
-selectedPackage=name;
-selectedPrice=price;
-
-document.getElementById("packageName").innerText=name;
-document.getElementById("amount").innerText="Amount to Pay: ₹"+price;
-
-document.getElementById("booking").scrollIntoView({
-behavior:"smooth"
-});
-}
-
-function getLocation(){
-
-if (!navigator.geolocation){
-alert("Geolocation is not supported by your browser");
-return;
-}
-
-navigator.geolocation.getCurrentPosition(
-
-function(position){
-
-let lat = position.coords.latitude;
-let lon = position.coords.longitude;
-
-let mapsLink = "https://www.google.com/maps?q=" + lat + "," + lon;
-
-document.getElementById("location").value = mapsLink;
-
-},
-
-function(error){
-alert("Unable to fetch location. Please allow location access.");
-}
-
-);
-
-}
-
-function sendWhatsApp(){
-
-let name=document.getElementById("name").value;
-let phone=document.getElementById("phone").value;
-let area=document.getElementById("area").value;
-let location=document.getElementById("location").value;
-let car=document.getElementById("car").value;
-let time=document.getElementById("time").value;
-
-fetch("https://script.google.com/macros/s/AKfycbxGoSHU_e-dX8js9yR9lXkxdZvGJTe712isKezlT-SrLiJsE9FX6bCnVTFQJrOxFIRH/exec", {
-  method: "POST",
-  headers: {
-    "Content-Type": "application/json"
-  },
-  body: JSON.stringify({
-    name: name,
-    phone: phone,
-    area: area,
-    location: location,
-    car: car,
-    package: selectedPackage,
-    time: time
-  })
-})
-.then(res => res.text())
-.then(data => console.log("SUCCESS:", data))
-.catch(err => console.error("ERROR:", err));
-
-let message =
-"New Car Wash Booking%0A"+
-"Name: "+name+"%0A"+
-"Phone: "+phone+"%0A"+
-"Area: "+area+"%0A"+
-"Location: "+location+"%0A"+
-"Preferred Slot: "+time+"%0A"+
-"Car: "+car+"%0A"+
-"Package: "+selectedPackage;
-
-window.open("https://api.whatsapp.com/send?phone=919899965192&text="+message);
-
-}
-
-function openWhatsAppDefault(){
-
-let message =
-"Namaste,%0A"+
-"Mujhe car wash service book karni hai.%0A"+
-"Please details share karein.";
-
-window.open("https://api.whatsapp.com/send?phone=919899965192&text="+message);
-
-}
-
-function payNow(){
-
-let name=document.getElementById("name").value;
-let phone=document.getElementById("phone").value;
-let area=document.getElementById("area").value;
-let location=document.getElementById("location").value;
-let car=document.getElementById("car").value;
-
-if(selectedPackage==""){
-alert("Please select a package first");
-return;
-}
-
-if(name=="" || phone=="" || area=="" || location=="" || car==""){
-alert("Please fill all booking details before payment.");
-return;
-}
-
-if(phone.length < 10){
-alert("Please enter a valid phone number.");
-return;
-}
-
-// ALWAYS show QR (no mobile detection)
-document.getElementById("qrSection").style.display="block";
-
-document.getElementById("qrSection").scrollIntoView({
-behavior:"smooth"
-});
-
-}
-
-</script>
-
-</head>
-
-<body>
-
-<header class="hero">
-
-<div class="hero-row">
-
-<div class="hero-logo">
-<img src="logo.png" class="logo">
-</div>
-
-<div class="hero-text">
-
-<h1>Doorstep Car & Bike Wash</h1>
-
-<p class="tagline">Professional Foam Cleaning at Your Home</p>
-
-<p><b>Starting from ₹149</b></p>
-
-<button class="hero-btn"
-onclick="document.getElementById('booking').scrollIntoView({behavior:'smooth'})">
-🚗 Book Your Wash Now
-</button>
-
-<div class="hero-trust">
-<span>⭐ Local Service</span>
-<span>✔ Secure UPI Payment</span>
-<span>🚗 100+ Cars Cleaned</span>
-</div>
-</div>
-</div>
-</header>
-
-<div style="height:4px;background:#25D366;"></div>
-
-<div style="
-text-align:center;
-background:#eef3ff;
-padding:10px;
-font-size:14px;
-border-bottom:1px solid #ddd;
-">
-
-📸 Follow us on Instagram:
-<a href="https://instagram.com/smartcarwash.gharaunda" target="_blank" style="color:#0a2540;font-weight:bold;text-decoration:none;">
-@smartcarwash.gharaunda
-</a>
-
-<p style="color:#666;margin-bottom:10px;">
-Have questions or want to book directly? Reach out to us
-</p>
-
-<div style="font-size:16px;margin-bottom:10px;">
-📱 Call / WhatsApp: 
-<a href="tel:9899965192" style="color:#0a2540;font-weight:bold;text-decoration:none;">
-9899965192
-</a>
-</div>
-
-<a href="#" onclick="openWhatsAppDefault()"
-style="
-background:#25D366;
-color:white;
-padding:6px 12px;
-border-radius:6px;
-text-decoration:none;
-font-size:14px;
-">
-Book Via WhatsApp
-</a>
-
-</div>
-
-<div class="container">
-
-<h2 class="section-title">How It Works</h2>
-<p style="text-align:center;font-size:16px;color:#666;">
-Book your wash in less than 30 seconds
-</p>
-<div class="how-grid">
-
-<div class="how-card">
-<h3>1️⃣ Select Package</h3>
-<p>Choose the service you need</p>
-</div>
-
-<div class="how-card">
-<h3>2️⃣ Enter Details</h3>
-<p>Provide location and vehicle details</p>
-</div>
-
-<div class="how-card">
-<h3>3️⃣ Pay Securely</h3>
-<p>Pay via scanning QR code</p>
-</div>
-
-<div class="how-card">
-<h3>4️⃣ Doorstep Service</h3>
-<p>Our service partner comes to your home</p>
-</div>
-
-</div>
-
-<h2 class="section-title">Single Wash Packages</h2>
-
-<div class="grid">
-
-<div class="card">
-<h3>🚗 Ceramic Wash <span class="badge">Launch Offer</span></h3>
-<div class="price">
-<span class="old-price">₹299</span>
-<span class="new-price">₹249</span>
-</div>
-
-<div class="offer-tag">Limited Time ₹50 OFF</div>
-<ul>
-<li>🫧 Ceramic shampoo wash</li>
-<li>💨 Pressure rinse</li>
-<li>🧹 Interior vacuum</li>
-</ul>
-<button class="select-btn" onclick="choosePackage('Basic Foam Wash',249)">Select</button>
-</div>
-
-<div class="card popular">
-<h3>🚗 Premium Wash <span class="badge">Best Value</span></h3>
-<div class="price">
-<span class="old-price">₹399</span>
-<span class="new-price">₹349</span>
-</div>
-
-<div class="offer-tag">Limited Time ₹50 OFF</div>
-<ul>
-<li>🫧 Foam exterior wash</li>
-<li>💨 Pressure rinse</li>
-<li>🧹 Interior vacuum</li>
-<li>✨ Dashboard polish</li>
-<li>🛞 Tyre polish</li>
-</ul>
-<button class="select-btn" onclick="choosePackage('Premium Wash',349)">Select</button>
-</div>
-
-<div class="card">
-<h3>🚗 Deep Interior Care</h3>
-<div class="price">₹999</div>
-<ul>
-<li>🫧 Foam exterior wash</li>
-<li>💨 Pressure rinse</li>
-<li>🧹 Interior vacuum</li>
-<li>🪑 Seat cleaning</li>
-<li>🧼 Floor cleaning</li>
-<li>🏠 Roof cleaning</li>
-</ul>
-<button class="select-btn" onclick="choosePackage('Deep Interior Care',999)">Select</button>
-</div>
-
-<div class="card">
-<h3>🏍 Bike Foam Wash</h3>
-<div class="price">₹149</div>
-<ul>
-<li>🫧 Foam wash</li>
-<li>💨 Pressure rinse</li>
-<li>🛞 Tyre polish</li>
-<li>✨ Complete wipe cleaning</li>
-</ul>
-<button class="select-btn" onclick="choosePackage('Bike Foam Wash',149)">Select</button>
-</div>
-
-<div class="card popular">
-<h3>🚗 + 🏍 Combo Wash</h3>
-<div class="price">₹399 <span class="badge">Best Combo Deal</span></div>
-<ul>
-<li>🚗 Car Foam Wash</li>
-<li>🏍 Bike Foam Wash</li>
-<li>💨 Pressure rinse</li>
-<li>🧹 Interior vacuum (car)</li>
-<li>✨ Complete wipe cleaning</li>
-</ul>
-<button class="select-btn" onclick="choosePackage('Combo Wash',349)">Select</button>
-</div>
-
-</div>
-
-<h2 class="section-title">Monthly Plans</h2>
-
-<div class="monthly-grid">
-
-<div class="card">
-<h3>🚗 Silver Plan</h3>
-<div class="price">₹899</div>
-<ul>
-<li>🚗 3 Premium washes</li>
-<li>📅 Monthly maintenance</li>
-<li>💰 Saves money</li>
-</ul>
-<button class="select-btn" onclick="choosePackage('Silver Plan',899)">Select</button>
-</div>
-
-<div class="card">
-<h3>🚗 Gold Plan</h3>
-<div class="price">₹1599</div>
-<ul>
-<li>🚗 4 washes (1 per week)</li>
-<li>🧼 1 Deep Interior</li>
-<li>⚡ Priority booking</li>
-<li>💰 Saves money</li>
-</ul>
-<button class="select-btn" onclick="choosePackage('Gold Plan',1599)">Select</button>
-</div>
-	
-</div>
-<h2 class="section-title">Service Time</h2>
-
-<div class="card" style="text-align:center;">
-⏱ Bike Wash: 20-25 minutes<br><br>
-⏱ Ceramic Car Wash: 30-40 minutes<br><br>
-⏱ Premium Car Wash: 40-50 minutes<br><br>
-⏱ Car Deep Interior: 100-120 minutes
-</div>
-<div class="booking-box" id="booking">
-
-<h2 style="text-align:center;margin-bottom:10px;">
-🚗 Book Your Doorstep Car Wash
-</h2>
-
-<p style="text-align:center;color:#666;margin-bottom:20px;">
-Select a package above and complete your booking in seconds
-</p>
-
-<div class="price-box">
-
-<div style="font-size:14px;color:#555;">
-Selected Package
-</div>
-
-<div id="packageName" style="font-size:18px;font-weight:bold;margin-top:5px;">
-None
-</div>
-
-<div id="amount" style="font-size:20px;color:#0a2540;margin-top:5px;">
-Amount to Pay: ₹0
-</div>
-
-</div>
-
-
-<br>
-
-<div class="form-grid">
-
-<div>
-<label>👤 Name</label>
-<input id="name">
-</div>
-
-<div>
-<label>📞 Phone</label>
-<input id="phone">
-</div>
-
-<div>
-<label>📍 Area / Colony</label>
-<input id="area">
-</div>
-
-<div>
-<label>🚗 Car Model</label>
-<input id="car">
-</div>
-
-</div>
-
-<label>🗺 Google Maps Location</label>
-<input id="location" placeholder="Click here to auto-detect location" onclick="getLocation()">
-
-<label>⏰ Preferred Time</label>
-<select id="time">
-<option>Morning</option>
-<option>Afternoon</option>
-<option>Evening</option>
-</select>
-
-<p style="text-align:center;font-size:14px;color:#666;">
-🔒 Secure UPI Payment • Booking confirmed instantly on WhatsApp
-</p>
-
-<button class="pay-btn" onclick="payNow()">
-💳 Secure Payment & Confirm Booking
-</button>
-
-<div style="
-background:#fff3cd;
-padding:10px;
-border-radius:8px;
-font-size:13px;
-margin-top:15px;
-text-align:center;
-">
-⚠ Visiting charge ₹5/km may apply for nearby villages outside Gharaunda.
-Collected by rider after service.
-</div>
-
-<div id="qrSection" style="
-display:none;
-text-align:center;
-margin-top:25px;
-background:#f5f5f5;
-padding:20px;
-border-radius:12px;
-">
-
-<h3>Scan QR to Pay</h3>
-
-<p style="font-size:14px;color:#555;">
-📱 Open any UPI app (GPay / PhonePe / Paytm)<br>
-👉 Tap “Scan QR” and complete payment
-</p>
-
-<p style="font-size:13px;color:#888;margin-top:8px;">
-✔ Safe & Secure Payment
-</p>
-
-<img src="upi-qr.png" style="width:220px;border-radius:10px;">
-
-<p style="margin-top:10px;">
-After payment click the button below to confirm booking.
-</p>
-
-<button onclick="sendWhatsApp()" style="
-margin-top:15px;
-padding:12px 18px;
-background:#25D366;
-color:white;
-border:none;
-border-radius:8px;
-font-size:16px;
-cursor:pointer;
-">
-Confirm Booking on WhatsApp
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-<div style="
-position:fixed;
-bottom:20px;
-right:20px;
-display:flex;
-flex-direction:column;
-gap:10px;
-z-index:1000;
-">
-
-<!-- WhatsApp -->
-<a href="#" onclick="openWhatsAppDefault()">
-<img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" width="55">
-</a>
-
-<!-- Instagram -->
-<a href="https://instagram.com/car_wash_gharaunda" target="_blank">
-<img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" width="55">
-</a>
-
-</div>
-
-<footer>
-📍 Serving Gharaunda & Nearby Villages  
-📞 WhatsApp Booking Available  
-🚗 Car Wash Gharaunda
-</footer>
-
-</body>
-</html>
+	<!DOCTYPE html>
+	<html>
+	<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>Car Wash in Gharaunda | Doorstep Car & Bike Cleaning Service</title>
+	<meta name="description" content="Doorstep car and bike washing service in Gharaunda. Book professional foam wash starting ₹149. Available in nearby villages.">
+
+	<style>
+
+	*{
+	box-sizing:border-box;
+	}
+
+	body{
+	font-family: 'Segoe UI', Arial, sans-serif;
+	margin:0;
+	padding:0;
+	overflow-x:hidden;
+	background:#f5f7fb;
+	color:#333;
+	}
+
+	/* HERO FIXED */
+	.hero{
+	width:100%;
+	background: linear-gradient(135deg,#0a2540,#163b63);
+	color:white;
+	text-align:center;
+	padding:60px 20px;
+	}
+
+	.hero-row{
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	gap:40px;
+	max-width:900px;
+	margin:auto;
+	flex-wrap:wrap;
+	}
+
+	.hero-logo{
+	flex:1;
+	text-align:center;
+	}
+
+	.hero-text{
+	flex:2;
+	text-align:left;
+	}
+
+	.hero-text h1{
+	font-size:36px;
+	margin-bottom:10px;
+	}
+
+	.logo{
+	width:200px;
+	box-shadow:0 10px 30px rgba(0,0,0,0.3);
+	border-radius:16px;
+	}
+
+	.tagline{
+	font-size:18px;
+	opacity:0.9;
+	margin-bottom:20px;
+	}
+
+	.hero-btn{
+	background:#25D366;
+	color:white;
+	border:none;
+	padding:14px 26px;
+	border-radius:30px;
+	font-size:16px;
+	cursor:pointer;
+	}
+
+	.hero-trust{
+	margin-top:20px;
+	display:flex;
+	gap:12px;
+	flex-wrap:wrap;
+	justify-content:center;
+	}
+
+	.hero-trust span{
+	background:rgba(255,255,255,0.15);
+	padding:6px 12px;
+	border-radius:20px;
+	}
+
+	/* CONTAINER FIX */
+	.container{
+	width:100%;
+	max-width:1000px;
+	margin:auto;
+	padding:16px;
+	box-sizing:border-box;
+	}
+
+	.section-title{
+	text-align:center;
+	margin-top:20px;
+	}
+
+	/* GRID */
+	.grid{
+	display:grid;
+	grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+	gap:16px;
+	margin-top:20px;
+	}
+
+	.how-grid{
+	display:grid;
+	grid-template-columns:1fr 1fr;
+	gap:14px;
+	max-width:700px;
+	margin:auto;
+	margin-top:10px;
+	}
+
+	.how-card{
+	background:white;
+	padding:14px;
+	border-radius:10px;
+	box-shadow:0 4px 10px rgba(0,0,0,0.08);
+	text-align:center;
+	font-size:12px;
+	}
+
+	.monthly-grid{
+	display:grid;
+	grid-template-columns:1fr 1fr;
+	gap:16px;
+	max-width:600px;
+	margin:auto;
+	margin-top:20px;
+	}
+
+	.card{
+	background:white;
+	padding:18px;
+	border-radius:12px;
+	box-shadow:0 4px 15px rgba(0,0,0,0.08);
+	}
+
+	.card:hover{
+	transform:translateY(-4px);
+	box-shadow:0 6px 20px rgba(0,0,0,0.12);
+	transition:0.2s;
+	}
+
+	.popular{
+	border:2px solid #25D366;
+	transform:scale(1.03);
+	}
+
+	.badge{
+	background:#25D366;
+	color:white;
+	padding:4px 8px;
+	border-radius:6px;
+	font-size:12px;
+	margin-left:6px;
+	}
+
+	.price{
+	font-size:22px;
+	font-weight:bold;
+	color:#0a2540;
+	margin:8px 0;
+	}
+
+	.old-price{
+	text-decoration:line-through;
+	color:#999;
+	font-size:16px;
+	margin-right:8px;
+	}
+
+	.new-price{
+	color:#25D366;
+	font-size:24px;
+	font-weight:bold;
+	}
+
+	.offer-tag{
+	background:#25D366;
+	color:white;
+	display:inline-block;
+	padding:4px 8px;
+	border-radius:6px;
+	font-size:12px;
+	margin-top:6px;
+	}
+
+	.select-btn{
+	background:#0a2540;
+	color:white;
+	border:none;
+	padding:10px;
+	border-radius:8px;
+	width:100%;
+	cursor:pointer;
+	margin-top:10px;
+	}
+
+	.booking-box{
+	background:white;
+	padding:20px;
+	border-radius:12px;
+	margin-top:30px;
+	}
+
+	input,select{
+	width:100%;
+	padding:10px;
+	margin-bottom:12px;
+	border-radius:8px;
+	border:1px solid #ccc;
+	}
+
+	.price-box{
+	background:#eef3ff;
+	padding:14px;
+	border-radius:10px;
+	text-align:center;
+	font-weight:bold;
+	}
+
+	.form-grid{
+	display:grid;
+	grid-template-columns:1fr 1fr;
+	gap:12px;
+	}
+
+	.pay-btn{
+	background:#25D366;
+	border:none;
+	padding:14px;
+	border-radius:10px;
+	color:white;
+	font-size:16px;
+	width:100%;
+	cursor:pointer;
+	}
+
+	/* ✅ CLEAN MOBILE FIX */
+	@media(max-width:700px){
+
+	.hero-row{
+	flex-direction:column;
+	text-align:center;
+	}
+
+	.hero-text{
+	text-align:center;
+	}
+
+	.logo{
+	width:140px;
+	}
+
+	.hero-text h1{
+	font-size:28px;
+	}
+
+	.grid{
+	grid-template-columns:1fr;
+	}
+
+	.monthly-grid{
+	grid-template-columns:1fr;
+	}
+
+	.how-grid{
+	grid-template-columns:1fr;
+	}
+
+	.form-grid{
+	grid-template-columns:1fr;
+	}
+
+	.card{
+	padding:14px;
+	}
+
+	}
+
+	footer{
+	text-align:center;
+	padding:30px;
+	color:#666;
+	margin-top:30px;
+	}
+
+	</style>
+
+	<script>
+
+	let selectedPackage="";
+	let selectedPrice=0;
+
+	function choosePackage(name,price){
+	selectedPackage=name;
+	selectedPrice=price;
+
+	document.getElementById("packageName").innerText=name;
+	document.getElementById("amount").innerText="Amount to Pay: ₹"+price;
+
+	document.getElementById("booking").scrollIntoView({
+	behavior:"smooth"
+	});
+	}
+
+	function getLocation(){
+
+	if (!navigator.geolocation){
+	alert("Geolocation is not supported by your browser");
+	return;
+	}
+
+	navigator.geolocation.getCurrentPosition(
+
+	function(position){
+
+	let lat = position.coords.latitude;
+	let lon = position.coords.longitude;
+
+	let mapsLink = "https://www.google.com/maps?q=" + lat + "," + lon;
+
+	document.getElementById("location").value = mapsLink;
+
+	},
+
+	function(error){
+	alert("Unable to fetch location. Please allow location access.");
+	}
+
+	);
+
+	}
+
+	function sendWhatsApp(){
+
+	let name=document.getElementById("name").value;
+	let phone=document.getElementById("phone").value;
+	let area=document.getElementById("area").value;
+	let location=document.getElementById("location").value;
+	let car=document.getElementById("car").value;
+	let time=document.getElementById("time").value;
+
+document.getElementById("f_name").value = name;
+document.getElementById("f_phone").value = phone;
+document.getElementById("f_area").value = area;
+document.getElementById("f_location").value = location;
+document.getElementById("f_car").value = car;
+document.getElementById("f_package").value = selectedPackage;
+document.getElementById("f_time").value = time;
+
+// submit to Google Sheet
+document.getElementById("sheetForm").submit();
+
+	let message =
+	"New Car Wash Booking%0A"+
+	"Name: "+name+"%0A"+
+	"Phone: "+phone+"%0A"+
+	"Area: "+area+"%0A"+
+	"Location: "+location+"%0A"+
+	"Preferred Slot: "+time+"%0A"+
+	"Car: "+car+"%0A"+
+	"Package: "+selectedPackage;
+
+	window.open("https://api.whatsapp.com/send?phone=919899965192&text="+message);
+
+	}
+
+	function openWhatsAppDefault(){
+
+	let message =
+	"Namaste,%0A"+
+	"Mujhe car wash service book karni hai.%0A"+
+	"Please details share karein.";
+
+	window.open("https://api.whatsapp.com/send?phone=919899965192&text="+message);
+
+	}
+
+	function payNow(){
+
+	let name=document.getElementById("name").value;
+	let phone=document.getElementById("phone").value;
+	let area=document.getElementById("area").value;
+	let location=document.getElementById("location").value;
+	let car=document.getElementById("car").value;
+
+	if(selectedPackage==""){
+	alert("Please select a package first");
+	return;
+	}
+
+	if(name=="" || phone=="" || area=="" || location=="" || car==""){
+	alert("Please fill all booking details before payment.");
+	return;
+	}
+
+	if(phone.length < 10){
+	alert("Please enter a valid phone number.");
+	return;
+	}
+
+	// ALWAYS show QR (no mobile detection)
+	document.getElementById("qrSection").style.display="block";
+
+	document.getElementById("qrSection").scrollIntoView({
+	behavior:"smooth"
+	});
+
+	}
+
+	</script>
+
+	</head>
+
+	<body>
+
+	<header class="hero">
+
+	<div class="hero-row">
+
+	<div class="hero-logo">
+	<img src="logo.png" class="logo">
+	</div>
+
+	<div class="hero-text">
+
+	<h1>Doorstep Car & Bike Wash</h1>
+
+	<p class="tagline">Professional Foam Cleaning at Your Home</p>
+
+	<p><b>Starting from ₹149</b></p>
+
+	<button class="hero-btn"
+	onclick="document.getElementById('booking').scrollIntoView({behavior:'smooth'})">
+	🚗 Book Your Wash Now
+	</button>
+
+	<div class="hero-trust">
+	<span>⭐ Local Service</span>
+	<span>✔ Secure UPI Payment</span>
+	<span>🚗 100+ Cars Cleaned</span>
+	</div>
+	</div>
+	</div>
+	</header>
+
+	<div style="height:4px;background:#25D366;"></div>
+
+	<div style="
+	text-align:center;
+	background:#eef3ff;
+	padding:10px;
+	font-size:14px;
+	border-bottom:1px solid #ddd;
+	">
+
+	📸 Follow us on Instagram:
+	<a href="https://instagram.com/smartcarwash.gharaunda" target="_blank" style="color:#0a2540;font-weight:bold;text-decoration:none;">
+	@smartcarwash.gharaunda
+	</a>
+
+	<p style="color:#666;margin-bottom:10px;">
+	Have questions or want to book directly? Reach out to us
+	</p>
+
+	<div style="font-size:16px;margin-bottom:10px;">
+	📱 Call / WhatsApp: 
+	<a href="tel:9899965192" style="color:#0a2540;font-weight:bold;text-decoration:none;">
+	9899965192
+	</a>
+	</div>
+
+	<a href="#" onclick="openWhatsAppDefault()"
+	style="
+	background:#25D366;
+	color:white;
+	padding:6px 12px;
+	border-radius:6px;
+	text-decoration:none;
+	font-size:14px;
+	">
+	Book Via WhatsApp
+	</a>
+
+	</div>
+
+<form id="sheetForm" method="POST" action="https://script.google.com/macros/s/AKfycbwfsH8zZ4c8c6AznFPNd1C-xaIzGfE4UY40dB7_1oZiL7gWVyU-cYC8yBzQ0Bz7oA3XOA/exec" target="hidden_iframe">
+
+<input type="hidden" name="name" id="f_name">
+<input type="hidden" name="phone" id="f_phone">
+<input type="hidden" name="area" id="f_area">
+<input type="hidden" name="location" id="f_location">
+<input type="hidden" name="car" id="f_car">
+<input type="hidden" name="package" id="f_package">
+<input type="hidden" name="time" id="f_time">
+
+</form>
+
+<iframe name="hidden_iframe" style="display:none;"></iframe>
+
+	<div class="container">
+
+	<h2 class="section-title">How It Works</h2>
+	<p style="text-align:center;font-size:16px;color:#666;">
+	Book your wash in less than 30 seconds
+	</p>
+	<div class="how-grid">
+
+	<div class="how-card">
+	<h3>1️⃣ Select Package</h3>
+	<p>Choose the service you need</p>
+	</div>
+
+	<div class="how-card">
+	<h3>2️⃣ Enter Details</h3>
+	<p>Provide location and vehicle details</p>
+	</div>
+
+	<div class="how-card">
+	<h3>3️⃣ Pay Securely</h3>
+	<p>Pay via scanning QR code</p>
+	</div>
+
+	<div class="how-card">
+	<h3>4️⃣ Doorstep Service</h3>
+	<p>Our service partner comes to your home</p>
+	</div>
+
+	</div>
+
+	<h2 class="section-title">Single Wash Packages</h2>
+
+	<div class="grid">
+
+	<div class="card">
+	<h3>🚗 Ceramic Wash <span class="badge">Launch Offer</span></h3>
+	<div class="price">
+	<span class="old-price">₹299</span>
+	<span class="new-price">₹249</span>
+	</div>
+
+	<div class="offer-tag">Limited Time ₹50 OFF</div>
+	<ul>
+	<li>🫧 Ceramic shampoo wash</li>
+	<li>💨 Pressure rinse</li>
+	<li>🧹 Interior vacuum</li>
+	</ul>
+	<button class="select-btn" onclick="choosePackage('Basic Foam Wash',249)">Select</button>
+	</div>
+
+	<div class="card popular">
+	<h3>🚗 Premium Wash <span class="badge">Best Value</span></h3>
+	<div class="price">
+	<span class="old-price">₹399</span>
+	<span class="new-price">₹349</span>
+	</div>
+
+	<div class="offer-tag">Limited Time ₹50 OFF</div>
+	<ul>
+	<li>🫧 Foam exterior wash</li>
+	<li>💨 Pressure rinse</li>
+	<li>🧹 Interior vacuum</li>
+	<li>✨ Dashboard polish</li>
+	<li>🛞 Tyre polish</li>
+	</ul>
+	<button class="select-btn" onclick="choosePackage('Premium Wash',349)">Select</button>
+	</div>
+
+	<div class="card">
+	<h3>🚗 Deep Interior Care</h3>
+	<div class="price">₹999</div>
+	<ul>
+	<li>🫧 Foam exterior wash</li>
+	<li>💨 Pressure rinse</li>
+	<li>🧹 Interior vacuum</li>
+	<li>🪑 Seat cleaning</li>
+	<li>🧼 Floor cleaning</li>
+	<li>🏠 Roof cleaning</li>
+	</ul>
+	<button class="select-btn" onclick="choosePackage('Deep Interior Care',999)">Select</button>
+	</div>
+
+	<div class="card">
+	<h3>🏍 Bike Foam Wash</h3>
+	<div class="price">₹149</div>
+	<ul>
+	<li>🫧 Foam wash</li>
+	<li>💨 Pressure rinse</li>
+	<li>🛞 Tyre polish</li>
+	<li>✨ Complete wipe cleaning</li>
+	</ul>
+	<button class="select-btn" onclick="choosePackage('Bike Foam Wash',149)">Select</button>
+	</div>
+
+	<div class="card popular">
+	<h3>🚗 + 🏍 Combo Wash</h3>
+	<div class="price">₹399 <span class="badge">Best Combo Deal</span></div>
+	<ul>
+	<li>🚗 Car Foam Wash</li>
+	<li>🏍 Bike Foam Wash</li>
+	<li>💨 Pressure rinse</li>
+	<li>🧹 Interior vacuum (car)</li>
+	<li>✨ Complete wipe cleaning</li>
+	</ul>
+	<button class="select-btn" onclick="choosePackage('Combo Wash',349)">Select</button>
+	</div>
+
+	</div>
+
+	<h2 class="section-title">Monthly Plans</h2>
+
+	<div class="monthly-grid">
+
+	<div class="card">
+	<h3>🚗 Silver Plan</h3>
+	<div class="price">₹899</div>
+	<ul>
+	<li>🚗 3 Premium washes</li>
+	<li>📅 Monthly maintenance</li>
+	<li>💰 Saves money</li>
+	</ul>
+	<button class="select-btn" onclick="choosePackage('Silver Plan',899)">Select</button>
+	</div>
+
+	<div class="card">
+	<h3>🚗 Gold Plan</h3>
+	<div class="price">₹1599</div>
+	<ul>
+	<li>🚗 4 washes (1 per week)</li>
+	<li>🧼 1 Deep Interior</li>
+	<li>⚡ Priority booking</li>
+	<li>💰 Saves money</li>
+	</ul>
+	<button class="select-btn" onclick="choosePackage('Gold Plan',1599)">Select</button>
+	</div>
+		
+	</div>
+	<h2 class="section-title">Service Time</h2>
+
+	<div class="card" style="text-align:center;">
+	⏱ Bike Wash: 20-25 minutes<br><br>
+	⏱ Ceramic Car Wash: 30-40 minutes<br><br>
+	⏱ Premium Car Wash: 40-50 minutes<br><br>
+	⏱ Car Deep Interior: 100-120 minutes
+	</div>
+	<div class="booking-box" id="booking">
+
+	<h2 style="text-align:center;margin-bottom:10px;">
+	🚗 Book Your Doorstep Car Wash
+	</h2>
+
+	<p style="text-align:center;color:#666;margin-bottom:20px;">
+	Select a package above and complete your booking in seconds
+	</p>
+
+	<div class="price-box">
+
+	<div style="font-size:14px;color:#555;">
+	Selected Package
+	</div>
+
+	<div id="packageName" style="font-size:18px;font-weight:bold;margin-top:5px;">
+	None
+	</div>
+
+	<div id="amount" style="font-size:20px;color:#0a2540;margin-top:5px;">
+	Amount to Pay: ₹0
+	</div>
+
+	</div>
+
+
+	<br>
+
+	<div class="form-grid">
+
+	<div>
+	<label>👤 Name</label>
+	<input id="name">
+	</div>
+
+	<div>
+	<label>📞 Phone</label>
+	<input id="phone">
+	</div>
+
+	<div>
+	<label>📍 Area / Colony</label>
+	<input id="area">
+	</div>
+
+	<div>
+	<label>🚗 Car Model</label>
+	<input id="car">
+	</div>
+
+	</div>
+
+	<label>🗺 Google Maps Location</label>
+	<input id="location" placeholder="Click here to auto-detect location" onclick="getLocation()">
+
+	<label>⏰ Preferred Time</label>
+	<select id="time">
+	<option>Morning</option>
+	<option>Afternoon</option>
+	<option>Evening</option>
+	</select>
+
+	<p style="text-align:center;font-size:14px;color:#666;">
+	🔒 Secure UPI Payment • Booking confirmed instantly on WhatsApp
+	</p>
+
+	<button class="pay-btn" onclick="payNow()">
+	💳 Secure Payment & Confirm Booking
+	</button>
+
+	<div style="
+	background:#fff3cd;
+	padding:10px;
+	border-radius:8px;
+	font-size:13px;
+	margin-top:15px;
+	text-align:center;
+	">
+	⚠ Visiting charge ₹5/km may apply for nearby villages outside Gharaunda.
+	Collected by rider after service.
+	</div>
+
+	<div id="qrSection" style="
+	display:none;
+	text-align:center;
+	margin-top:25px;
+	background:#f5f5f5;
+	padding:20px;
+	border-radius:12px;
+	">
+
+	<h3>Scan QR to Pay</h3>
+
+	<p style="font-size:14px;color:#555;">
+	📱 Open any UPI app (GPay / PhonePe / Paytm)<br>
+	👉 Tap “Scan QR” and complete payment
+	</p>
+
+	<p style="font-size:13px;color:#888;margin-top:8px;">
+	✔ Safe & Secure Payment
+	</p>
+
+	<img src="upi-qr.png" style="width:220px;border-radius:10px;">
+
+	<p style="margin-top:10px;">
+	After payment click the button below to confirm booking.
+	</p>
+
+	<button onclick="sendWhatsApp()" style="
+	margin-top:15px;
+	padding:12px 18px;
+	background:#25D366;
+	color:white;
+	border:none;
+	border-radius:8px;
+	font-size:16px;
+	cursor:pointer;
+	">
+	Confirm Booking on WhatsApp
+	</button>
+
+	</div>
+
+	</div>
+
+	</div>
+
+	</div>
+
+	<div style="
+	position:fixed;
+	bottom:20px;
+	right:20px;
+	display:flex;
+	flex-direction:column;
+	gap:10px;
+	z-index:1000;
+	">
+
+	<!-- WhatsApp -->
+	<a href="#" onclick="openWhatsAppDefault()">
+	<img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" width="55">
+	</a>
+
+	<!-- Instagram -->
+	<a href="https://instagram.com/car_wash_gharaunda" target="_blank">
+	<img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" width="55">
+	</a>
+
+	</div>
+
+	<footer>
+	📍 Serving Gharaunda & Nearby Villages  
+	📞 WhatsApp Booking Available  
+	🚗 Car Wash Gharaunda
+	</footer>
+
+	</body>
+	</html>
