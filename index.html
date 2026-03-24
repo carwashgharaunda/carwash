@@ -317,6 +317,34 @@ behavior:"smooth"
 });
 }
 
+function getLocation(){
+
+if (!navigator.geolocation){
+alert("Geolocation is not supported by your browser");
+return;
+}
+
+navigator.geolocation.getCurrentPosition(
+
+function(position){
+
+let lat = position.coords.latitude;
+let lon = position.coords.longitude;
+
+let mapsLink = "https://www.google.com/maps?q=" + lat + "," + lon;
+
+document.getElementById("location").value = mapsLink;
+
+},
+
+function(error){
+alert("Unable to fetch location. Please allow location access.");
+}
+
+);
+
+}
+
 function sendWhatsApp(){
 
 let name=document.getElementById("name").value;
@@ -324,6 +352,26 @@ let phone=document.getElementById("phone").value;
 let area=document.getElementById("area").value;
 let location=document.getElementById("location").value;
 let car=document.getElementById("car").value;
+let time=document.getElementById("time").value;
+
+fetch("https://script.google.com/macros/s/AKfycbxGoSHU_e-dX8js9yR9lXkxdZvGJTe712isKezlT-SrLiJsE9FX6bCnVTFQJrOxFIRH/exec", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify({
+    name: name,
+    phone: phone,
+    area: area,
+    location: location,
+    car: car,
+    package: selectedPackage,
+    time: time
+  })
+})
+.then(res => res.text())
+.then(data => console.log("SUCCESS:", data))
+.catch(err => console.error("ERROR:", err));
 
 let message =
 "New Car Wash Booking%0A"+
@@ -331,8 +379,20 @@ let message =
 "Phone: "+phone+"%0A"+
 "Area: "+area+"%0A"+
 "Location: "+location+"%0A"+
+"Preferred Slot: "+time+"%0A"+
 "Car: "+car+"%0A"+
 "Package: "+selectedPackage;
+
+window.open("https://api.whatsapp.com/send?phone=919899965192&text="+message);
+
+}
+
+function openWhatsAppDefault(){
+
+let message =
+"Namaste,%0A"+
+"Mujhe car wash service book karni hai.%0A"+
+"Please details share karein.";
 
 window.open("https://api.whatsapp.com/send?phone=919899965192&text="+message);
 
@@ -417,8 +477,8 @@ border-bottom:1px solid #ddd;
 ">
 
 📸 Follow us on Instagram:
-<a href="https://instagram.com/car_wash_gharaunda" target="_blank" style="color:#0a2540;font-weight:bold;text-decoration:none;">
-@car_wash_gharaunda
+<a href="https://instagram.com/smartcarwash.gharaunda" target="_blank" style="color:#0a2540;font-weight:bold;text-decoration:none;">
+@smartcarwash.gharaunda
 </a>
 
 <p style="color:#666;margin-bottom:10px;">
@@ -432,7 +492,7 @@ Have questions or want to book directly? Reach out to us
 </a>
 </div>
 
-<a href="https://wa.me/919899965192" target="_blank"
+<a href="#" onclick="openWhatsAppDefault()"
 style="
 background:#25D366;
 color:white;
@@ -481,7 +541,7 @@ Book your wash in less than 30 seconds
 <div class="grid">
 
 <div class="card">
-<h3>Basic Foam Wash <span class="badge">Launch Offer</span></h3>
+<h3>🚗 Ceramic Wash <span class="badge">Launch Offer</span></h3>
 <div class="price">
 <span class="old-price">₹299</span>
 <span class="new-price">₹249</span>
@@ -489,7 +549,7 @@ Book your wash in less than 30 seconds
 
 <div class="offer-tag">Limited Time ₹50 OFF</div>
 <ul>
-<li>🫧 Foam exterior wash</li>
+<li>🫧 Ceramic shampoo wash</li>
 <li>💨 Pressure rinse</li>
 <li>🧹 Interior vacuum</li>
 </ul>
@@ -516,7 +576,7 @@ Book your wash in less than 30 seconds
 
 <div class="card">
 <h3>🚗 Deep Interior Care</h3>
-<div class="price">₹899</div>
+<div class="price">₹999</div>
 <ul>
 <li>🫧 Foam exterior wash</li>
 <li>💨 Pressure rinse</li>
@@ -525,7 +585,7 @@ Book your wash in less than 30 seconds
 <li>🧼 Floor cleaning</li>
 <li>🏠 Roof cleaning</li>
 </ul>
-<button class="select-btn" onclick="choosePackage('Deep Interior Care',899)">Select</button>
+<button class="select-btn" onclick="choosePackage('Deep Interior Care',999)">Select</button>
 </div>
 
 <div class="card">
@@ -541,10 +601,10 @@ Book your wash in less than 30 seconds
 </div>
 
 <div class="card popular">
-<h3>🚗 + 🏍 Combo Wash (Car + Bike) <span class="badge">Popular Combo</span></h3>
-<div class="price">₹349</div>
+<h3>🚗 + 🏍 Combo Wash</h3>
+<div class="price">₹399 <span class="badge">Best Combo Deal</span></div>
 <ul>
-<li>🚗 Basic Car Foam Wash</li>
+<li>🚗 Car Foam Wash</li>
 <li>🏍 Bike Foam Wash</li>
 <li>💨 Pressure rinse</li>
 <li>🧹 Interior vacuum (car)</li>
@@ -586,10 +646,10 @@ Book your wash in less than 30 seconds
 <h2 class="section-title">Service Time</h2>
 
 <div class="card" style="text-align:center;">
-⏱ Bike Wash: ~30 minutes<br><br>
-⏱ Basic Car Wash: ~45 minutes<br><br>
-⏱ Premium Car Wash: ~60 minutes<br><br>
-⏱ Car Deep Interior: ~100 minutes
+⏱ Bike Wash: 20-25 minutes<br><br>
+⏱ Ceramic Car Wash: 30-40 minutes<br><br>
+⏱ Premium Car Wash: 40-50 minutes<br><br>
+⏱ Car Deep Interior: 100-120 minutes
 </div>
 <div class="booking-box" id="booking">
 
@@ -645,7 +705,7 @@ Amount to Pay: ₹0
 </div>
 
 <label>🗺 Google Maps Location</label>
-<input id="location">
+<input id="location" placeholder="Click here to auto-detect location" onclick="getLocation()">
 
 <label>⏰ Preferred Time</label>
 <select id="time">
@@ -732,7 +792,7 @@ z-index:1000;
 ">
 
 <!-- WhatsApp -->
-<a href="https://wa.me/919899965192" target="_blank">
+<a href="#" onclick="openWhatsAppDefault()">
 <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" width="55">
 </a>
 
